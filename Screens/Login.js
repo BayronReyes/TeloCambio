@@ -11,9 +11,8 @@ import {
   Platform,
 } from "react-native";
 
-import {appFirebase, auth} from "../firebaseConfig";
+import { appFirebase, auth } from "../firebaseConfig";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-
 
 export default function Login(props) {
   //Crear variable de estado
@@ -25,8 +24,7 @@ export default function Login(props) {
       await signInWithEmailAndPassword(auth, email, password);
       Alert.alert("Iniciando sesión...", "Accediendo...");
 
-      props.navigation.navigate("Menu");
-
+      props.navigation.navigate("Galeria");
     } catch (error) {
       console.log(error);
       Alert.alert("Error", "El Correo o la Contraseña son Incorrectos.");
