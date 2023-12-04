@@ -177,7 +177,6 @@ export default function Concretar({ route }) {
     );
   };
 
-
   return (
       <View style={styles.container}>
         <Text style={{ ...styles.bigText, ...styles.boldTextTittle }}>

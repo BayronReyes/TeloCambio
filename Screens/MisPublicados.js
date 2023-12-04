@@ -82,6 +82,7 @@ export default function MisPublicados() {
     try {
       await Promise.all([eliminarOfertasAsociadas(itemId), deleteDoc(doc(db, "Publicaciones", itemId))]);
       setDataSource((prevData) => prevData.filter(item => item.uid !== itemId));
+      setNumOfertasRecibidas((prevNum) => Math.max(0, prevNum - 1));
     } catch (error) {
       console.error("Error al eliminar el artículo:", error);
     }
@@ -125,7 +126,7 @@ export default function MisPublicados() {
   };
 
   const goMisOfertas = () => {
-    navigation.navigate("MisOfertas");
+    navigation.replace("MisOfertas");
   };
 
   const MisIntercambios = () => {

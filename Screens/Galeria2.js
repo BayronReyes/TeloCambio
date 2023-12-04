@@ -163,7 +163,7 @@ export default function Galeria2() {
   };
 
   const goMisOfertas = () => {
-    navigation.navigate("MisOfertas");
+    navigation.replace("MisOfertas");
   };
 
   const MisIntercambios = () => {
